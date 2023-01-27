@@ -8,6 +8,14 @@
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node build/index.js"
   },
+    "config": {
+    "cz-emoji": {
+      "skipQuestions": [
+        "issues",
+        "breaking"
+      ]
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bhanu1776/REST-API.git"
