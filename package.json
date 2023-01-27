@@ -22,7 +22,8 @@
   },
     "pre-commit": [
       "ts.check",
-      "build"
+      "build",
+      "add-build"
   ],
   "repository": {
     "type": "git",
