@@ -9,24 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 5000;
-const job_routes = require("../routes/AppRoutes");
-app.get("/", (req, res) => {
-    res.json({ msg: "I am Root" });
+exports.getAllJobsTesting = exports.getAllJobs = void 0;
+const getAllJobs = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.status(200).json({ msg: "I am getAllJobs" });
 });
-//* Middleware (To set router)
-app.use("/api/jobs", job_routes);
-const start = () => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        app.listen(PORT, () => {
-            console.log(`Yes I am connected to ${PORT} Port`);
-        });
-    }
-    catch (error) {
-        console.log(error);
-    }
+exports.getAllJobs = getAllJobs;
+const getAllJobsTesting = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.status(200).json({ msg: "I am getAllJobsTesting" });
 });
-start();
-//# sourceMappingURL=index.js.map
+exports.getAllJobsTesting = getAllJobsTesting;
+//# sourceMappingURL=Jobs.js.map
