@@ -6,9 +6,13 @@
   "scripts": {
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
-    "start": "npm run build && node build/index.js"
+    "start2": "npm run build && node build/index.js",
+    "start": "vercel dev",
+    "deploy": "vercel deploy --prod",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add build"
   },
-    "config": {
+  "config": {
     "cz-emoji": {
       "skipQuestions": [
         "issues",
@@ -16,6 +20,10 @@
       ]
     }
   },
+    "pre-commit": [
+      "ts.check",
+      "build"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bhanu1776/REST-API.git"
@@ -36,6 +44,8 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "pre-commit": "^1.2.2",
+    "vercel": "^28.13.2"
   }
 }
