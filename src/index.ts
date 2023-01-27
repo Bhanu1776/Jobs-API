@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 5000;
 
 app.get("/", (req: Request, res: Response) => {
   //   res.send("Hi, I am Live Now");
-  res.json({ msg: "I am Saxx" });
+  res.json({ msg: "I am Root" });
 });
 
 const start = async () => {

@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 app.get("/", (req, res) => {
     //   res.send("Hi, I am Live Now");
-    res.json({ msg: "I am Saxx" });
+    res.json({ msg: "I am Root" });
 });
 const start = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
