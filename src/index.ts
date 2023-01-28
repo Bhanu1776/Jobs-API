@@ -1,4 +1,7 @@
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 import { Express, Request, Response } from "express";
+import process from "process";
 const express = require("express");
 const app: Express = express();
 const connectDB = require("./db/connect");
@@ -16,7 +19,7 @@ app.use("/api/jobs", job_routes);
 
 const start = async () => {
   try {
-    await connectDB();
+    await connectDB(process.env.DATABASE);
     app.listen(PORT, () => {
       console.log(`Yes I am connected to ${PORT} Port`);
     });
