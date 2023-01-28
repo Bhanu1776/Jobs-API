@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Designer",
+    "description": "I am a designer",
+    "price": 123,
+    "category": "Tech"
+  },
+  {
+    "title": "Developer",
+    "description": "I am a Developer",
+    "price": 123,
+    "category": "Tech"
+  }
+]
