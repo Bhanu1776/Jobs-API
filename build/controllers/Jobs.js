@@ -9,13 +9,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAllJobsTesting = exports.getAllJobs = void 0;
+exports.getAllJobsTesting = exports.Temp = exports.getAllJobs = void 0;
+const JobSchema = require("../models/JobSchema");
 const getAllJobs = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.status(200).json({ msg: "I am getAllJobs" });
+    const myData = yield JobSchema.find({});
+    res.status(200).json({ myData });
 });
 exports.getAllJobs = getAllJobs;
+const Temp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const myData = yield JobSchema.find({});
+    res.status(200).json({ myData });
+});
+exports.Temp = Temp;
 const getAllJobsTesting = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.status(200).json({ msg: "I am getAllJobsTesting" });
+    const myData = yield JobSchema.find({});
+    res.status(200).json({ myData });
 });
 exports.getAllJobsTesting = getAllJobsTesting;
 //# sourceMappingURL=Jobs.js.map
