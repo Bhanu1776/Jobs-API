@@ -4,7 +4,7 @@ const app: Express = express();
 
 const PORT = process.env.PORT || 5000;
 
-const job_routes = require("../routes/AppRoutes");
+const job_routes = require("./routes/AppRoutes");
 
 app.get("/", (req: Request, res: Response) => {
   res.json({ msg: "I am Root" });

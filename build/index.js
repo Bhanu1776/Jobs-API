@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 5000;
-const job_routes = require("../routes/AppRoutes");
+const job_routes = require("./routes/AppRoutes");
 app.get("/", (req, res) => {
     res.json({ msg: "I am Root" });
 });
