@@ -8,11 +8,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
+const process_1 = __importDefault(require("process"));
 const express = require("express");
 const app = express();
 const connectDB = require("./db/connect");
-const PORT = process.env.PORT || 5000;
+const PORT = process_1.default.env.PORT || 5000;
 const job_routes = require("./routes/AppRoutes");
 app.get("/", (req, res) => {
     res.json({ msg: "I am Root" });
@@ -21,7 +27,7 @@ app.get("/", (req, res) => {
 app.use("/api/jobs", job_routes);
 const start = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield connectDB();
+        yield connectDB(process_1.default.env.DATABASE);
         app.listen(PORT, () => {
             console.log(`Yes I am connected to ${PORT} Port`);
         });
