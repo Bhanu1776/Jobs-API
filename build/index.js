@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const app = express();
+const connectDB = require("./db/connect");
 const PORT = process.env.PORT || 5000;
 const job_routes = require("./routes/AppRoutes");
 app.get("/", (req, res) => {
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 app.use("/api/jobs", job_routes);
 const start = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        yield connectDB();
         app.listen(PORT, () => {
             console.log(`Yes I am connected to ${PORT} Port`);
         });
