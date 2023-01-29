@@ -12,7 +12,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllJobsTesting = exports.Temp = exports.getAllJobs = void 0;
 const JobSchema = require("../models/JobSchema");
 const getAllJobs = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const myData = yield JobSchema.find(req.query);
+    const { category, title } = req.query;
+    const queryObject = {
+        title: undefined,
+        description: undefined,
+        price: undefined,
+        category: undefined,
+    };
+    if (category) {
+        queryObject.category = category;
+    }
+    if (title) {
+        queryObject.title = { $regex: title, $options: "i" };
+    }
+    const myData = yield JobSchema.find(queryObject);
     res.status(200).json({ myData });
 });
 exports.getAllJobs = getAllJobs;
