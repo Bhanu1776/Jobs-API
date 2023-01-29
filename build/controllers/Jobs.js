@@ -12,17 +12,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllJobsTesting = exports.Temp = exports.getAllJobs = void 0;
 const JobSchema = require("../models/JobSchema");
 const getAllJobs = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const myData = yield JobSchema.find({});
+    const myData = yield JobSchema.find(req.query);
     res.status(200).json({ myData });
 });
 exports.getAllJobs = getAllJobs;
 const Temp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const myData = yield JobSchema.find({});
+    const myData = yield JobSchema.find(req.query);
     res.status(200).json({ myData });
 });
 exports.Temp = Temp;
 const getAllJobsTesting = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const myData = yield JobSchema.find({});
+    const myData = yield JobSchema.find(req.query);
     res.status(200).json({ myData });
 });
 exports.getAllJobsTesting = getAllJobsTesting;
