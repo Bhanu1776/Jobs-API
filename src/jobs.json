@@ -1,14 +1,50 @@
 [
   {
-    "title": "Designer",
-    "description": "I am a designer",
-    "price": 123,
-    "category": "Tech"
+    "title": "Video Editing",
+    "description": "Writing and editing copy as well as adapting pictures and multimedia for social media platforms.",
+    "price": 3000,
+    "category": "Design"
   },
   {
-    "title": "Developer",
-    "description": "I am a Developer",
-    "price": 123,
-    "category": "Tech"
+    "title": "Android Developer",
+    "description": "Need a Freelancer to build an application for the grocery which can be efficient, fast and user-friendly",
+    "price": 5000,
+    "category": "Development"
+  },
+  {
+    "title": "Accountant",
+    "description": "need help in making critical financial decisions. Person with an expertise required",
+    "price": 4000,
+    "category": "Finance"
+  },
+  {
+    "title": "Article Writing",
+    "description": "Need a writer to document an article for our research related work",
+    "price": 4000,
+    "category": "Art"
+  },
+  {
+    "title": "Logistics",
+    "description": "Need a good logistics team to help to transport heavy machinery goods",
+    "price": 4000,
+    "category": "Administrative"
+  },
+  {
+    "title": "Technical Paper",
+    "description": "Correcting errors, loading paper, and adjusting equipment settings. Performing preventative maintenance.",
+    "price": 4000,
+    "category": "Writing"
+  },
+  {
+    "title": "Data entry",
+    "description": "Scoping important data from Construction documents Entering data into our software to run simulations",
+    "price": 4000,
+    "category": "Writing"
+  },
+  {
+    "title": "Graphic Designer",
+    "description": "All kind of Logo designing and poster making will get done",
+    "price": 4000,
+    "category": "Design"
   }
 ]
