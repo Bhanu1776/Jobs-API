@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 const JobSchema = require("../models/JobSchema");
 
 export const getAllJobs = async (req: Request, res: Response) => {
-  const { category, title } = req.query;
+  const { category, title, sort } = req.query;
 
   type Obj = {
     title: any;
@@ -25,7 +25,23 @@ export const getAllJobs = async (req: Request, res: Response) => {
     queryObject.title = { $regex: title, $options: "i" };
   }
 
-  const myData = await JobSchema.find(queryObject);
+  // let myArray:any = sort;
+  // let splitArray = [];
+
+  // for (let i = 0; i < myArray.length; i++) {
+  //   splitArray.push(myArray[i].split(" "));
+  // }
+  // console.log(splitArray);
+
+  let apiData = JobSchema.find(queryObject);
+
+  if (sort) {
+    let sortSafe: any = sort;
+    let sortFix = sortSafe.split(",").join(" ");
+    apiData = apiData.sort(sortFix);
+  }
+
+  const myData = await apiData;
   res.status(200).json({ myData });
 };
 
